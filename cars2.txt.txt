@@ -1,0 +1,17 @@
+-- SELECT * FROM cars;
+-- SELECT brand, model, relaase_year, price FROM cars;
+-- SELECT * FROM cars WHERE brand = 'Mazda';
+-- SELECT * FROM cars WHERE price BETWEEN 15000 AND 30000;
+-- SELECT *FROM cars WHERE relaase_year > 2017 AND is_costum_cleared = TRUE;
+-- UPDATE cars SET is_sold = TRUE;
+-- UPDATE cars SET price = 13999 WHERE car_id = 4;
+-- UPDATE cars SET is_sold = TRUE WHERE brand IN ('Lexus', 'Volvo');
+-- ALTER TABLE cars ADD COLUMN color VARCHAR(30);
+-- ALTER TABLE cars DROP COLUMN color;
+-- ALTER TABLE cars RENAME COLUMN relaase_year TO release_year;
+-- ALTER TABLE cars ALTER COLUMN price TYPE NUMERIC(12,2);
+-- DELETE FROM cars WHERE car_id IN (SELECT car_id FROM cars ORDER BY car_id LIMIT 2);
+-- DELETE FROM cars WHERE is_sold = TRUE;
+-- DELETE FROM cars;
+-- TRUNCATE TABLE cars;
+-- DROP TABLE cars;
