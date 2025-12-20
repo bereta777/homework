@@ -1,0 +1,27 @@
+CREATE TABLE cars (
+    id SERIAL PRIMARY KEY,
+    brand_name VARCHAR(50) NOT NULL,
+    car_model VARCHAR(50) NOT NULL,
+    release_year INTEGER NOT NULL,
+    vin VARCHAR(17) UNIQUE NOT NULL,
+    engine_capacity NUMERIC(3,1) CHECK (engine_capacity > 0.5),
+    mileage_km INTEGER,
+    custom_cleared BOOLEAN DEFAULT FALSE,
+    price NUMERIC(10,2) CHECK (price >= 0),
+    description TEXT,
+    sold BOOLEAN DEFAULT FALSE,
+    created_at DATE DEFAULT CURRENT_DATE
+);
+NSERT INTO cars 
+(brand_name, car_model, release_year, vin, engine_capacity, mileage_km, custom_cleared, price)
+VALUES
+('Toyota', 'Camry', 2018, 'JTNB11HK0J3000001', 2.5, 85000, TRUE, 18500),
+('BMW', 'X5', 2017, 'WBAXH51010L000002', 3.0, 120000, TRUE, 32000),
+('Mercedes', 'C200', 2016, 'WDDWF4JB5GR000003', 2.0, 140000, FALSE, 21000),
+('Audi', 'A6', 2019, 'WAUZZZ4G0KN000004', 2.0, 70000, TRUE, 29000),
+('Honda', 'Civic', 2015, 'SHHFK2760FU000005', 1.8, 160000, TRUE, 13500),
+('Hyundai', 'Elantra', 2020, 'KMHD84LF2LU000006', 2.0, 40000, TRUE, 17500),
+('Kia', 'Sportage', 2018, 'KNAPM81BBJ7000007', 2.4, 90000, FALSE, 22000),
+('Ford', 'Fusion', 2017, '3FA6P0H73HR000008', 2.0, 110000, TRUE, 16000),
+('Nissan', 'Altima', 2016, '1N4AL3AP8GC000009', 2.5, 130000, TRUE, 15000),
+('Volkswagen', 'Passat', 2019, 'WVWZZZ3CZKE000010', 2.0, 65000, TRUE, 24500);
